@@ -8,6 +8,7 @@ public class GetBookingStepDefinition {
 
     @Dado("que el turista navegó hasta la consulta de las reservas")
     public void queElTuristaNavegoHastaLaConsultaDeLasReservas() {
+        System.out.println("Prueba");
     }
 
     @Cuando("suministre su código de reserva")
