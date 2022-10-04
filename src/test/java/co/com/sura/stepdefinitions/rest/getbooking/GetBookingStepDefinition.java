@@ -10,7 +10,6 @@ public class GetBookingStepDefinition {
     public void queElTuristaNavegoHastaLaConsultaDeLasReservas() {
     }
 
-
     @Cuando("suministre su código de reserva")
     public void suministreSuCodigoDeReserva() {
 
