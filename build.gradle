@@ -1,0 +1,48 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("net.serenity-bdd:serenity-gradle-plugin:2.2.12")
+        classpath "net.serenity-bdd:serenity-single-page-report:2.2.12"
+    }
+}
+
+plugins {
+    id 'java'
+    id 'java-library'
+    id 'idea'
+}
+
+apply plugin: 'net.serenity-bdd.aggregator'
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+}
+
+compileJava.options.encoding = "UTF-8"
+compileTestJava.options.encoding = "UTF-8"
+
+wrapper {
+    gradleVersion '7.0'
+    distributionType Wrapper.DistributionType.ALL
+}
+
+dependencies {
+    api 'net.serenity-bdd:serenity-cucumber5:2.2.6'
+    api 'net.serenity-bdd:serenity-core:2.2.12'
+    api 'net.serenity-bdd:serenity-junit:2.2.12'
+    api 'net.serenity-bdd:serenity-screenplay:2.2.12'
+    api 'net.serenity-bdd:serenity-screenplay-webdriver:2.2.12'
+    api 'net.serenity-bdd:serenity-screenplay-rest:2.2.12'
+    api 'com.fasterxml.jackson.core:jackson-databind:2.10.3'
+    api 'com.github.javafaker:javafaker:1.0.2'
+    api 'junit:junit:4.13'
+    api 'org.slf4j:slf4j-simple:1.7.30'
+    api 'org.assertj:assertj-core:3.15.0'
+    api 'io.rest-assured:rest-assured:3.3.0'
+    api "io.cucumber:cucumber-core:4.2.0"
+    api "io.cucumber:cucumber-junit:4.2.0"
+    testImplementation 'junit:junit:4.12'
+}
